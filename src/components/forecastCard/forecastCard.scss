@@ -1,0 +1,116 @@
+.forecast-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid rgb(183, 208, 220);
+  border-radius: 5px;
+
+  box-shadow: 0px 1px 11px -2px rgba(0,0,0,0.21);
+
+  &__title {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 0 0 10px;
+    color: rgb(59, 58, 58);
+  }
+
+  &__weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-tittle {
+      position: relative;
+      font-size: 20px;
+      top: 20px;
+      left: 20px;
+    }
+
+    &__img {
+      width: 40px;
+    }
+  }
+
+  &__temperature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40px;
+
+    &-tittle {
+      font-weight: 400;
+    }
+
+    &-value {
+      font-weight: bold;
+      font-size: 22px;
+    }
+  }
+
+  &__button-remove {
+    border: 0;
+    background-color: inherit;
+    position: absolute;
+    right: 1px;
+    top: 5px;
+    cursor: pointer;
+
+    &--cross {
+      width: 20px;
+      padding: 3px;
+      border-radius: 5px;
+      transition: 0.3s;
+      
+      &:hover {
+        background-color: rgb(221, 220, 220);
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__button-update {
+    display: block;
+    margin: 20px auto 0;
+    width: 140px;
+    padding: 5px;
+
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(84, 142, 193);
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: rgb(55, 55, 53);
+  
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: rgb(230, 219, 164);
+    }
+
+    &:active {
+      background-color: rgb(230, 219, 164);
+      transform: scale(105%);
+    }
+  }
+
+  &__learnMore {
+    text-decoration: none;
+    position: relative;
+    text-align: right;
+    margin-top: 25px;
+    right: 5px;
+    bottom: 5px;
+    color: rgb(136, 75, 32);
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}

@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './App.scss';
+import { fetchForecast } from './api/api';
+import { clearForecasts } from './store/forecastSlice';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { ForecastSliceState } from './types/types';
+import { ForecastList } from './components/forecastList/forecastList';
+import { ForecastPage } from './components/forecastPage/forecastPage';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+export const App:React.FC = () => {
+  const dispatch = useAppDispatch();
+  const state = useAppSelector((state: ForecastSliceState) => state);
+
+  useEffect(() => {
+    dispatch(clearForecasts())
+    for (let i = 0; i < state.cities.length; i++) {
+      dispatch(fetchForecast(state.cities[i]))
+    }
+  }, [dispatch]);
+console.log(state);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Routes >
+        <Route path="/" element={<ForecastList />} />
+        <Route path="forecast-for-:name" element={<ForecastPage />} />
+        <Route path="*" element={<p>Page not found</p>} />
+      </Routes>
     </div>
   );
 }
-
-export default App;

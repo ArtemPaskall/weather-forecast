@@ -1,0 +1,118 @@
+.forecast-list {
+
+  &__city-name {
+    position: relative;
+    margin-left: 25px;
+    color: white;
+    font-size: 54px;
+  }
+}
+
+.forecast-page {
+  margin-top: 35px;
+  height: 400px;
+  background-image: url(../../images/sky-bground.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__date {
+    font-size: 26px;
+    font-weight: 200;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  &__avg-temp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 200px;
+    font-size: 26px;
+    margin-top: 50px;
+
+    &--average {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 92px;
+      
+      &-digit {
+        font-size: 52px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__sunrise, &__sunset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    font-size: 14px;
+
+    &--img {
+      width: 25px;
+    }
+  }
+
+  &__feels {
+    position: relative;
+    top: 15px;
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.3);
+    font-size: 18px;
+    padding: 3px;
+  }
+
+  &__description {
+    position: relative;
+    top: 45px;
+    text-align: center;
+    font-size: 22px;
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+  }
+
+  &__bottom-bar {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    align-items: center;
+    text-align: center;
+
+    background-color: rgba(65, 64, 64, 0.4);
+  }
+
+  &__bottom-item {
+    padding: 5px;
+  }
+
+  &__bottom-description {
+    font-weight: 100;
+    font-size: 14px;
+  }
+  
+  &__bottom-value {
+    font-size: 24px;
+    font-weight: 500;
+
+    &--descriptoin {
+      font-size: 14px;
+      font-weight: 100;
+    }
+  }
+}
