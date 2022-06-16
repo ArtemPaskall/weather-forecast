@@ -1,6 +1,6 @@
 {
   "name": "weather-forecast",
-  "homepage": ".",
+  "homepage": "https://artempaskall.github.io/weather-forecast/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
