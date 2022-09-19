@@ -8,7 +8,7 @@ import { ForecastList } from './components/forecastList/forecastList';
 import { ForecastPage } from './components/forecastPage/forecastPage';
 import { Routes, Route } from 'react-router-dom';
 
-export const App:React.FC = () => {
+export const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const state = useAppSelector((state: ForecastSliceState) => state);
 
@@ -18,7 +18,6 @@ export const App:React.FC = () => {
       dispatch(fetchForecast(state.cities[i]))
     }
   }, [dispatch]);
-console.log(state);
 
   return (
     <div className='App'>

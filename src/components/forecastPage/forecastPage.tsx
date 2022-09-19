@@ -28,8 +28,6 @@ function levelTemp(temp: number) {
   }
 }
 
-console.log((forecast));
-
   return (
     <>
        <div className='forecast-list'>
